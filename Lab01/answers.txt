@@ -1,0 +1,13 @@
+Câu 1: What happens if users choose "Cancel"?
+Trả lời: Khi người dùng nhấn "Cancel", phương thức JOptionPane.showConfirmDialog() trả về JOptionPane.CANCEL_OPTION (-1).
+ Nếu không xử lý giá trị này, chương trình có thể gặp lỗi hoặc phản hồi không chính xác.
+
+Câu 2: How to customize the options to users?
+Trả lời: Có thể sử dụng JOptionPane.showOptionDialog() để tùy chỉnh các nút, ví dụ:
+- Chỉ có hai nút "Yes" và "No".
+- Hoặc thay đổi thành "I do" và "I don’t".
+Ví dụ code:
+JOptionPane.showOptionDialog(null,
+    "Do you agree?", "Custom Dialog",
+    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+    null, new String[]{"I do", "I don’t"}, "I do");
