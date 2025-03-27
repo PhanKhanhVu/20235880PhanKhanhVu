@@ -1,0 +1,15 @@
+//Phan Khanh Vũ 20235880
+
+//Câu hỏi phần 9 
+Accessor methods (getters) được sử dụng để truy xuất hoặc hiển thị thông tin của một đối tượng ra bên ngoài lớp. Khi một lớp có thuộc tính `private`, getters cho phép các lớp khác đọc giá trị của thuộc tính đó mà không thể thay đổi trực tiếp, giúp duy trì tính đóng gói (encapsulation).  
+
+//Câu hỏi phần 15 
+Java luôn sử dụng cơ chế **pass by value** (truyền theo giá trị), ngay cả khi truyền đối tượng vào phương thức. Khi một đối tượng được truyền vào, thực chất Java sao chép giá trị của tham chiếu đến đối tượng đó. Vì vậy:  
+
+- Nếu phương thức thay đổi thuộc tính của đối tượng, sự thay đổi này sẽ ảnh hưởng đến đối tượng gốc.  
+- Tuy nhiên, nếu phương thức gán lại tham chiếu (ví dụ: `obj = new Object();`), thay đổi này chỉ áp dụng trong phạm vi phương thức và không ảnh hưởng đến đối tượng ban đầu.  
+
+Với kiểu dữ liệu nguyên thủy (`int`, `float`, `boolean`,…), giá trị thực sự được sao chép, nên mọi thay đổi bên trong phương thức không ảnh hưởng đến biến gốc bên ngoài.  
+
+//Câu hỏi phần 10  
+Java không cho phép tạo hai constructor có cùng kiểu tham số, ngay cả khi tên tham số khác nhau. Ví dụ, nếu có hai constructor `DigitalVideoDisc(String title)` và `DigitalVideoDisc(String category)`, chương trình sẽ gặp lỗi vì Java chỉ phân biệt constructor dựa trên số lượng và kiểu tham số, không dựa vào tên. Khi gọi `new DigitalVideoDisc("Animation")`, trình biên dịch không thể xác định constructor nào được sử dụng, dẫn đến lỗi mơ hồ (ambiguity).  
