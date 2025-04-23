@@ -1,4 +1,7 @@
 package hust.soict.hedspi.aims.test;
+
+import hust.soict.hedspi.aims.dvd.DigitalVideoDisc;
+
 public class TestPassingParameter {
     public static void main(String[] args) {
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
