@@ -1,3 +1,4 @@
+package hust.soict.hedspi.aims.aims;
 public class Aims {
     public static void main(String[] arg) {
         Cart anOrder = new Cart();
