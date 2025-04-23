@@ -1,3 +1,4 @@
+package hust.soict.hedspi.aims.dvd;
 public class DigitalVideoDisc {
     private String title;
     private String categories;
