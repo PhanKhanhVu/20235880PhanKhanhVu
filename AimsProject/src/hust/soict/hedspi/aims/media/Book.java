@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.media;
 
 import java.util.ArrayList;
 
-public class Book extends Media {
+public class Book extends Media implements Playable {
     private ArrayList<String> authors = new ArrayList<>();
 
     public Book(int id, String title, String category, float cost) {
@@ -29,7 +29,10 @@ public class Book extends Media {
     public ArrayList<String> getAuthors() {
         return authors;
     }
-
+    @Override
+    public void play() {
+        System.out.println("Cannot play book: " + getTitle());
+    }
     @Override
     public String toString() {
         return "Book - " + getTitle() + " - " + getCategory() + " - Authors: " + authors + " - " + getCost() + "$";

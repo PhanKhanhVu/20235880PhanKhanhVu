@@ -24,6 +24,8 @@ public abstract class Media {
     public void setCategory(String category) { this.category = category; }
     public void setCost(float cost) { this.cost = cost; }
 
+    public void setId(int id) { this.id = id; }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -32,17 +34,15 @@ public abstract class Media {
         return this.title != null && this.title.equalsIgnoreCase(other.getTitle());
     }
 
-
     public boolean isMatch(String title) {
         if (this.title == null || title == null) return false;
         return this.title.equalsIgnoreCase(title);
     }
-
     public static final Comparator<Media> COMPARE_BY_TITLE_COST =
             Comparator.comparing(Media::getTitle)
                     .thenComparing(Media::getCost, Comparator.reverseOrder());
-
     public static final Comparator<Media> COMPARE_BY_COST_TITLE =
             Comparator.comparing(Media::getCost, Comparator.reverseOrder())
                     .thenComparing(Media::getTitle);
+    public abstract String toString();
 }

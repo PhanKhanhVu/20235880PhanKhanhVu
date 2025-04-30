@@ -6,8 +6,10 @@ import java.util.ArrayList;
 public class Store {
     public static final int MAX_ITEMS_IN_STORE = 1000;
     private ArrayList<Media> itemsInStore = new ArrayList<>();
+    private int idCounter = 1;  // Tự động cấp id cho các sản phẩm
 
     public void addMedia(Media m) {
+        m.setId(idCounter++);  // Cấp id tự động
         if (!itemsInStore.contains(m)) {
             if (itemsInStore.size() < MAX_ITEMS_IN_STORE) {
                 itemsInStore.add(m);
@@ -43,5 +45,10 @@ public class Store {
             }
         }
         return null;
+    }
+
+    // Getter cho các sản phẩm trong store
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
     }
 }

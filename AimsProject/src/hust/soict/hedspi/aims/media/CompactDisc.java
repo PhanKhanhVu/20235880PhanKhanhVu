@@ -1,8 +1,5 @@
 package hust.soict.hedspi.aims.media;
 
-import hust.soict.hedspi.aims.media.Playable;
-import hust.soict.hedspi.aims.media.Track;
-
 import java.util.ArrayList;
 
 public class CompactDisc extends Media implements Playable {
@@ -15,12 +12,15 @@ public class CompactDisc extends Media implements Playable {
     }
 
     public String getArtist() { return artist; }
+
     public void addTrack(Track t) {
         if (!tracks.contains(t)) tracks.add(t);
     }
+
     public void removeTrack(Track t) {
         tracks.remove(t);
     }
+
     public int getLength() {
         return tracks.stream().mapToInt(Track::getLength).sum();
     }
