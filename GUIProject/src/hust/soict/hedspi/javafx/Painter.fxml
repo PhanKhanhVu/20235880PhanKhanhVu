@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.javafx.PainterController">
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <padding>
+        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+    </padding>
+    <left>
+        <VBox maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets right="8.0" />
+            </BorderPane.margin>
+        </VBox>
+    </left>
+    <center>
+        <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" onMousePressed="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+                <Button layoutY="144.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" prefHeight="39.0" prefWidth="113.0" text="Clear" />
+                <TitledPane animated="false" maxWidth="112.0" prefHeight="132.0" prefWidth="112.0" text="Tools">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="80.0" prefWidth="99.0">
+                            <children>
+                                <RadioButton fx:id="pen" layoutX="16.0" layoutY="14.0" mnemonicParsing="false" text="Pen" />
+                                <RadioButton fx:id="eraser" layoutX="16.0" layoutY="51.0" mnemonicParsing="false" text="Eraser" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>
