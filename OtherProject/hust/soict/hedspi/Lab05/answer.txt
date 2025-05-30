@@ -1,0 +1,35 @@
+Trong một hệ thống quản lý và phát các loại phương tiện nghe nhìn như DVD, CD,... (thường được xây dựng với mô hình hướng đối tượng), mỗi đối tượng phương tiện (Media) đều có thể có một phương thức play() để phát nội dung.
+
+Trong một hệ thống quản lý và phát các loại phương tiện nghe nhìn như DVD, CD,... (thường được xây dựng với mô hình hướng đối tượng), mỗi đối tượng phương tiện (Media) đều có thể có một phương thức play() để phát nội dung. Tùy thuộc vào từng loại phương tiện, việc phát có thể xảy ra lỗi — ví dụ:
+
+Đĩa bị hỏng.
+
+Thời lượng (length) bằng 0 hoặc âm.
+
+Thiết bị phát không tương thích.
+
+Nội dung bị lỗi, mã hóa sai, v.v.
+
+Trong Java, có hai loại ngoại lệ:
+
+Checked exceptions (ngoại lệ được kiểm tra): Phải được xử lý tại thời điểm biên dịch (compile-time).
+Unchecked exceptions (ngoại lệ không kiểm tra): Không bắt buộc xử lý tại compile-time.
+
+PlayerException là checked exception, nên nếu gọi play() mà không xử lý (dùng try-catch) hoặc không khai báo throws, chương trình không thể biên dịch:
+Hậu quả nếu không cập nhật lớp Aims để xử lý
+
+Lỗi biên dịch (Compile-time error)
+Khi play() được khai báo với throws PlayerException, mọi nơi gọi đến nó (bao gồm lớp Aims) phải:
+
+Dùng try-catch để bắt ngoại lệ.
+
+Hoặc khai báo tiếp throws PlayerException cho chính phương thức gọi nó.
+
+Nếu không làm cả hai, chương trình sẽ không thể biên dịch được.
+
+Chương trình dừng đột ngột nếu ngoại lệ không được bắt
+Nếu bạn "lách luật" bằng cách liên tục throws mà không bao giờ catch, cuối cùng khi lỗi thực sự xảy ra trong play(), chương trình sẽ crash tại runtime.
+
+Người dùng sẽ thấy một thông báo lỗi kỹ thuật khó hiểu
+
+Vậy: Nếu không cập nhật lớp Aims để xử lý ngoại lệ phát sinh từ phương thức play(), chương trình sẽ không thể biên dịch hoặc bị dừng đột ngột khi xảy ra lỗi tại runtime. Điều này ảnh hưởng tiêu cực đến trải nghiệm người dùng, gây khó khăn trong việc bảo trì và mở rộng hệ thống. Việc xử lý ngoại lệ bằng cách sử dụng khối try-catch là bắt buộc để đảm bảo tính ổn định, an toàn và thân thiện của ứng dụng.
